@@ -1,40 +1,42 @@
 @font-face{
 	font-family: QGRegular;
-	src: url(nonfiction.regular.ttf);
+	src: url(fonts/nonfiction.regular.ttf);
 }
 
 @font-face{
 	font-family: QGTitle;
-	src: url(Ergono-Regular.otf);
+	src: url(fonts/Ergono-Regular.otf);
 }
 
 @font-face{
 	font-family: Raptor;
-	src: url(raptor_sans.ttf);
+	src: url(fonts/raptor_sans.ttf);
 }
 
 html {
 	border: 50px solid transparent;
-	border-image: url(border2.png) 20 stretch;
+	border-image: url(../img/border2.png) 20 stretch;
 	margin-right: 5%;
 	margin-left: 5%;
-	background-image: url(background.jpg);
+	background-image: url(../img/background.jpg);
 	background-size: cover;
 	text-shadow: 2px 2px #222222;
 }
 
 body * {
 	border: 10px solid transparent;
-	border-image: url(border2.png) 20 stretch;
+	border-image: url(../img/border2.png) 20 stretch;
 	text-align: center;
 	font-family: 'Press Start 2P', cursive;
 	color: #2e89a3;
 }
 
 header {
-	background-image: url(banner.jpg);
+	background-image: url(../img/banner.jpg);
 	background-size: contain;
 	padding-top: 2%}
+
+	
 header p {
 	color: #EEEEEE;
 	border: none;
@@ -89,17 +91,17 @@ section {
 }
 
 #x {
-	background-image: url(blbsr.jpg);
+	background-image: url(../img/blbsr.jpg);
 	background-size: cover;
 }
 
 #y {
-	background-image: url(chrmndr.jpg);
+	background-image: url(../img/chrmndr.jpg);
 	background-size: cover;
 }
 
 #z {
-	background-image: url(sqrtl.jpg);
+	background-image: url(../img/sqrtl.jpg);
 	background-size: cover;
 }
 
