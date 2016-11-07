@@ -16,26 +16,29 @@
 html {
 	border: 50px solid transparent;
 	border-image: url(../img/border2.png) 20 stretch;
+
 	margin-right: 5%;
 	margin-left: 5%;
+
 	background-image: url(../img/background.jpg);
 	background-size: cover;
 	text-shadow: 2px 2px #222222;
 }
 
-body * {
+body *{
 	border: 10px solid transparent;
 	border-image: url(../img/border2.png) 20 stretch;
 	text-align: center;
 	font-family: 'Press Start 2P', cursive;
 	color: #2e89a3;
+
 }
 
 header {
 	background-image: url(../img/banner.jpg);
 	background-size: contain;
-	padding-top: 2%}
-
+	padding-top: 2%
+}
 	
 header p {
 	color: #EEEEEE;
@@ -60,7 +63,7 @@ header p {
 	color: black;
 	background: lightgrey;
 	text-align: left;
-	margin: 0px 30%;
+	margin: 0px 20%;
 	padding: 15px 0px;
 	font-variant: small-caps;
 	font-family: 'Press Start 2P', cursive;
@@ -110,7 +113,7 @@ section {
 }
 
 .footwrapper {
-	margin: 0px 43% 0px;
+	margin: 0px 33% 0px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -122,7 +125,7 @@ section {
 	font-family: 'Dosis', sans-serif;
 	font-size: 14px;
 	border: none;
-	margin: 0 5px 0;
+	margin: 0px 5px 0px;
 	color: #14fe7c;
 	text-decoration: none;
 }
