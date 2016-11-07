@@ -1,0 +1,126 @@
+@font-face{
+	font-family: QGRegular;
+	src: url(nonfiction.regular.ttf);
+}
+
+@font-face{
+	font-family: QGTitle;
+	src: url(Ergono-Regular.otf);
+}
+
+@font-face{
+	font-family: Raptor;
+	src: url(raptor_sans.ttf);
+}
+
+html {
+	border: 50px solid transparent;
+	border-image: url(border2.png) 20 stretch;
+	margin-right: 5%;
+	margin-left: 5%;
+	background-image: url(background.jpg);
+	background-size: cover;
+	text-shadow: 2px 2px #222222;
+}
+
+body * {
+	border: 10px solid transparent;
+	border-image: url(border2.png) 20 stretch;
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	color: #2e89a3;
+}
+
+header {
+	background-image: url(banner.jpg);
+	background-size: contain;
+	padding-top: 2%}
+header p {
+	color: #EEEEEE;
+	border: none;
+	font-variant: small-caps;
+}
+
+
+#title {
+	font-family: "QGRegular";
+	font-size: 72px;
+	margin-top: -30px;
+}
+
+#subtitle {
+	margin-top: -40px;
+	font-style: oblique;
+
+}
+
+.heading {
+	color: black;
+	background: lightgrey;
+	text-align: left;
+	margin: 0px 30%;
+	padding: 15px 0px;
+	font-variant: small-caps;
+	font-family: 'Press Start 2P', cursive;
+	font-weight: bold;
+	font-size: 32px;
+}
+
+section {
+	border: none;
+}
+
+
+.projects {
+	/*margin-bottom: 200px;*/
+	padding-bottom: 180px;
+	border: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.projects a {
+
+	margin: 0px 1% 0px;
+	padding: 5px 20px 180px;
+	background: white;
+	justify-content: center;
+}
+
+#x {
+	background-image: url(blbsr.jpg);
+	background-size: cover;
+}
+
+#y {
+	background-image: url(chrmndr.jpg);
+	background-size: cover;
+}
+
+#z {
+	background-image: url(sqrtl.jpg);
+	background-size: cover;
+}
+
+.motd {
+	border: none;
+}
+
+.footwrapper {
+	margin: 0px 43% 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background: #0066FF;
+
+}
+
+.footwrapper a{
+	font-family: 'Dosis', sans-serif;
+	font-size: 14px;
+	border: none;
+	margin: 0 5px 0;
+	color: #14fe7c;
+	text-decoration: none;
+}
