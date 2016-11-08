@@ -37,7 +37,6 @@
 		.tabs {
 			border: 10px solid transparent;
 			border-image: url(img/border2.png) 20 stretch;
-			background: ;
 			display: inline-block;
 			margin-bottom: 5px;
 		}
@@ -75,11 +74,11 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/rnbw-icon.ico">
 	</head>
 	<body>
-		<div class="header">
-			<h1>Choose Your Palette </h1>
-		</div>
 		<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="js/canvas.js"></script>
+
+		<div class="header">
+			<h1>Choose Your Palette </h1>
 		<div class = "tabs">
 				<button id="rainbow">Rainbow</button>
 				<button id="bluegreen">Blue-Green</button>
@@ -87,7 +86,14 @@
 				<button id="random">Random</button>
 				<button id="gradient"><span>Create Your Own</span></button>
 		</div>
+		</div>
+		
+
+		
+		
+		
 		<canvas id="canvas" width="500" height="500"></canvas>
+		
 		<div id="controls">
 			<button id="scramble">Scramble!</button>
 			<button id="shift"><span>Shift!</span></button>
