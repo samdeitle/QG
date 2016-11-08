@@ -54,14 +54,13 @@ header p {
 }
 
 #subtitle {
-	margin-top: -40px;
+	margin-top: -35px;
 	font-style: oblique;
 
 }
 
 .heading {
 	color: black;
-	background: lightgrey;
 	text-align: left;
 	margin: 0px 20%;
 	padding: 15px 0px;
@@ -72,6 +71,7 @@ header p {
 }
 
 section {
+	background: lightgrey;
 	border: none;
 }
 
@@ -85,9 +85,13 @@ section {
 	justify-content: center;
 }
 
+.active {
+	padding-bottom: 5px;
+}
+
 .projects a {
 
-	margin: 0px 1% 0px;
+	margin: 5px 5px 0px;
 	padding: 5px 20px 180px;
 	background: white;
 	justify-content: center;
@@ -108,12 +112,17 @@ section {
 	background-size: cover;
 }
 
+#canvas-link {
+	background-image: url(../img/rnbw-icon.png);
+	background-size: cover;
+}
+
 .motd {
 	border: none;
 }
 
 .footwrapper {
-	margin: 0px 33% 0px;
+	margin: 0px 40% 0px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -125,7 +134,7 @@ section {
 	font-family: 'Dosis', sans-serif;
 	font-size: 14px;
 	border: none;
-	margin: 0px 5px 0px;
+	margin: 0px 10% 0px;
 	color: #14fe7c;
 	text-decoration: none;
 }
