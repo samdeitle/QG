@@ -93,16 +93,15 @@ section {
 
 	margin: 5px 5px 0px;
 	padding: 5px 20px 180px;
-	width: 256px;
-	height: 225px;
 	background: white;
 	justify-content: center;
+	width: 256px;
 }
 
 
 #canvas-link {
 	background-image: url(../img/rnbw-icon.png);
-	background-size: contain;
+	background-size: cover;
 }
 
 #x {
