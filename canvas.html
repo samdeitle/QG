@@ -21,6 +21,7 @@
 			text-decoration: underline overline;
 		}
 
+
 		.header
 		{
 			color: white;
@@ -37,8 +38,7 @@
 		.tabs {
 			border: 10px solid transparent;
 			border-image: url(img/border2.png) 20 stretch;
-			display: inline-block;
-			margin-bottom: 5px;
+			display: inline;
 		}
 
 		.tabs button.active
@@ -49,17 +49,17 @@
 
 		.controls {
 			justify-content: center;
+			margin-bottom: 5px;
 		}
 
 		.resize {
-
 			display: flex;
 			justify-content: center;
 		}
 
 		#gSize {
 			margin-left:10px;
-			margin-right: 23px;
+
 		}
 
 		.footwrapper a{
@@ -69,41 +69,41 @@
 
 		}
 	</style>
+
 	<head>
 		<title>Palette Display</title>
 		<link rel="shortcut icon" type="image/x-icon" href="img/rnbw-icon.ico">
 	</head>
+	
 	<body>
 		<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="js/canvas.js"></script>
 
 		<div class="header">
 			<h1>Choose Your Palette </h1>
-		<div class = "tabs">
+			<div class = "tabs">
 				<button id="rainbow">Rainbow</button>
 				<button id="bluegreen">Blue-Green</button>
 				<button id="pink">Pink</button>
 				<button id="random">Random</button>
-				<button id="gradient"><span>Create Your Own</span></button>
-		</div>
-		</div>
-		
-
-		
-		
-		
-		<canvas id="canvas" width="500" height="500"></canvas>
-		
-		<div id="controls">
-			<button id="scramble">Scramble!</button>
-			<button id="shift"><span>Shift!</span></button>
-			<br />
-			<div class="resize">
-				<p>Resize ---></p>
-				<input id="gSize" type="number">
-				<input id="submit" type="submit">
+				<button id="gradient">Create Your Own</button>
 			</div>
 		</div>
+				
+		<canvas id="canvas" width="500" height="500"></canvas>
+		
+		<div class="controls">
+			<button id="scramble">Scramble!</button>
+			<button id="shift">Shift!</button>
+		</div>
+
+		<div class="resize">
+			<p>Resize ---></p>
+			<input id="gSize" type="number">
+			<input id="submit" type="submit">
+		</div>
+		
+		
 		<div class="footwrapper">
 			<a href="index.html">Home</a>
 		</div>
