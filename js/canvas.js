@@ -4,6 +4,7 @@ var canvas    = document.getElementById("canvas");
 var ctx       = canvas.getContext("2d");
 var gridSize  = 4;
 var gridScalar= 1;
+var gridDSplay= true;
 canvas.width  = 500;
 canvas.height = 500;
 
@@ -46,30 +47,37 @@ function interp(L, Lval, R, Rval, X)
 	return newVal;
 }
 
-function reset()
+function rset()
 {
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0, 0, 500, 500);
-	index = r_index;	
+	index = r_index.slice();	
 }
 
 function createGrade()
 {
-	reset();
+	rset();
 	
 }
 
 function displayPalette(palette)
 {
-	reset();
 	// index = r_index;
 	var i;
 	var j;
+	var ind;
 	for (i = 0; i < gridSize; i++)
 	{
 		for (j = 0; j < gridSize; j++)
 		{
-			var ind = Math.round((gridSize*i + j)*gridScalar);
+			if (gridDSplay)
+			{
+				ind = Math.round((gridSize*i + j)*gridScalar);
+			}
+			else
+			{
+				ind = (i + j);
+			}
 			ctx.fillStyle = palette[index[ind]];
 			ctx.fillRect(i*125, j*125, 125, 125);
 			// console.log("i: " + i + " --- j: " + j + " --- ind: " + ind);
@@ -79,18 +87,39 @@ function displayPalette(palette)
 }
 
 $('#rainbow').click(function handleRainbow(){
+	rset();
 	displayPalette(rainbow);
 	curColor = rainbow;
 });
 
 $('#bluegreen').click(function handleBlueGreen(){
+	rset();
 	displayPalette(bluegreen);
 	curColor = bluegreen;
 });
 
 $('#pink').click(function handlePink(){
+	rset();
 	displayPalette(pink);
 	curColor = pink;
+});
+
+$('#gd').click(function(){
+	if (!gridDSplay){
+		gridDSplay = true;
+		displayPalette(curColor);
+		$('#gd').addClass('active');
+		$('#dd').removeClass('active');
+	}
+});
+
+$('#dd').click(function(){
+	if (gridDSplay){
+		gridDSplay = false;
+		displayPalette(curColor);
+		$('#gd').removeClass('active');
+		$('#dd').addClass('active');
+	}
 });
 
 $('#submit').click(function setSize(){
@@ -110,7 +139,7 @@ $('#submit').click(function setSize(){
 
 $('#random').click(function randGrid()
 {
-	index = r_index;
+	index = r_index.slice();
 	random = []
 	var i;
 	var j;
@@ -137,15 +166,24 @@ $('#scramble').click(function scramble()
 {
 	var i;
 	var j;
-	for (i = 0; i < gridSize; i++)
+	var color = [];
+	var ind   = index;
+
+	for (i = 0; i < 16; i++)
 	{
-		for (j = 0; j < gridSize; j++)
-		{
-			var color = curColor[(Math.floor(Math.random()*16))];
-			ctx.fillStyle = color;
-			ctx.fillRect(i*125, j*125, 125, 125);
-		}
+		color.push(ind.splice(Math.floor(Math.random()*(16 - i)), 1)[0]);
 	}
+
+	// for (i = 0; i < gridSize; i++)
+	// {
+	// 	for (j = 0; j < gridSize; j++)
+	// 	{
+	// 		color.push(curColor[(Math.floor(Math.random()*16))]);
+	// 	}
+	// }
+
+	index = color;
+	displayPalette(curColor);
 });
 
 $('#shift').click(function shift()
