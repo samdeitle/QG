@@ -122,10 +122,14 @@ $('#dd').click(function(){
 	}
 });
 
-$('#submit').click(function setSize(){
-	gridSize = $("#gSize").val();
-	canvas.height = gridSize*125;
-	canvas.width  = gridSize*125;
+function setSize(){
+	var g = $("#gSize").val();
+	
+	if (g != (null||gridSize)) {
+		gridSize = g;
+	
+		canvas.height = gridSize*125;
+		canvas.width  = gridSize*125;
 	// var tmp = [];
 	// for (i = 0; i < gridSize*gridSize; i++)
 	// {
@@ -133,9 +137,11 @@ $('#submit').click(function setSize(){
 	// }
 	// index   = tmp;
 	// r_index = tmp;
-	gridScalar = 15/(gridSize*gridSize - 1);
-	displayPalette(curColor);
-});
+		gridScalar = 15/(gridSize*gridSize - 1);
+		displayPalette(curColor);
+	}
+};
+$('#submit').click( function(){setSize();} );
 
 $('#random').click(function randGrid()
 {
@@ -191,6 +197,14 @@ $('#shift').click(function shift()
 	var tmp = index.shift();
 	index.push(tmp);
 	displayPalette(curColor);
+});
+
+$(document).keypress(function(event) {
+	console.log(event.which);
+	if (event.which == 13){
+		setSize();	
+	}
+
 });
 
 };

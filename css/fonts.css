@@ -1,0 +1,19 @@
+@font-face{
+	font-family: QGRegular;
+	src: url(fonts/nonfiction.regular.ttf);
+}
+
+@font-face{
+	font-family: QGTitle;
+	src: url(fonts/Ergono-Regular.otf);
+}
+
+@font-face{
+	font-family: Raptor;
+	src: url(fonts/raptor_sans.ttf);
+}
+
+@font-face{
+	font-family: PixelThin;
+	src: url(fonts/PokemonGB.ttf);
+}

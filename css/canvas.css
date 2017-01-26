@@ -1,0 +1,113 @@
+@import url("fonts.css");
+
+*
+{
+	text-align: center;
+	color: black;
+	font-family: 'PixelThin';
+	background-image: url(img/PTown1.jpg);
+}
+
+html
+{
+	background-image: url(img/PTown1.jpg);
+}
+
+
+.header
+{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.header h1
+{
+	border: 10px solid transparent;
+	border-image: url(img/border2.png) 20 stretch;
+	text-align: center;
+	color: black;
+	background: #EEE;
+	display: inline;
+	padding: 5px 5px;
+}
+
+.hidden
+{
+	display: none;
+}
+
+.display 
+{
+	margin-bottom: 20px;
+	display: inline-block;
+}
+
+
+.tabs, .tabs1 {
+	border: 10px solid transparent;
+	border-image: url(img/border2.png) 20 stretch;
+	display: inline;
+}
+
+button
+{
+	color: white;
+	background: black;
+	margin-right: -20px;
+}
+
+button.active
+{
+	color: #14fe7c;
+	background: #0066FF;
+	display: inline-block;
+}
+
+.canvas-wrapper
+{
+	background-image: url(img/PTown1.jpg);
+}
+#canvas 
+{
+	background-image: none;
+	opacity: .8;
+}
+
+.controls {
+	display: inline;
+	margin-bottom: 5px;
+	border: 10px solid transparent;
+	border-image: url(img/border2.png) 20 stretch;
+	justify-content: center;
+}
+
+.resize {
+	display: flex;
+	justify-content: center;
+}
+.resize *
+{
+	border: 10px solid transparent;
+	border-image: url(img/border2.png) 20 stretch;
+	padding: 5px;
+	text-align: center;
+	color: black;
+	background: #EEE;
+}
+.resize p
+{
+	font-size: 12px;
+}
+
+.footwrapper{
+	margin-top: 10px;
+}
+
+.footwrapper a{
+	text-decoration: overline underline;
+	background: #EEE;
+	padding: 5px;
+	font-size: 10px;
+
+}
