@@ -23,6 +23,7 @@ var pink	  = ['#FF3E96', '#EE3A8C', '#CD3278', '#8B2252',
 				 '#8B3A62', '#872657', '#FF1493', '#EE1289',
 				 '#CD1076', '#8B0A50', '#FF34B3', '#EE30A7']
 var random    = []
+var cyo 	  = []
 var curColor  = null;
 var index	  = [0 , 1 , 2 , 3 ,
 				 4 , 5 , 6 , 7 ,
@@ -47,17 +48,19 @@ function interp(L, Lval, R, Rval, X)
 	return newVal;
 }
 
+
 function rset()
 {
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0, 0, 500, 500);
-	index = r_index.slice();	
-}
+	index = r_index.slice();
+	if (!$('.CYO').hasClass('hidden'))
+	{
+			$('.CYO').addClass('hidden');
+	}	
 
-function createGrade()
-{
-	rset();
-	
+	$('#canvas').removeClass('hidden');	
+
 }
 
 function displayPalette(palette)
@@ -84,24 +87,31 @@ function displayPalette(palette)
 			// console.log("");
 		}
 	}
+
+	curColor = palette;
 }
 
 $('#rainbow').click(function handleRainbow(){
 	rset();
 	displayPalette(rainbow);
-	curColor = rainbow;
 });
 
 $('#bluegreen').click(function handleBlueGreen(){
 	rset();
 	displayPalette(bluegreen);
-	curColor = bluegreen;
 });
 
 $('#pink').click(function handlePink(){
 	rset();
 	displayPalette(pink);
-	curColor = pink;
+});
+
+$('#gradient').click(function createGrade()
+{
+
+	$('.CYO').removeClass('hidden');
+	$('#canvas').addClass('hidden');
+	
 });
 
 $('#gd').click(function(){
@@ -120,6 +130,56 @@ $('#dd').click(function(){
 		$('#gd').removeClass('active');
 		$('#dd').addClass('active');
 	}
+});
+
+function createYourOwn(r1, g1, b1, r2, g2, b2){
+
+	var r_diff = r2 - r1;
+	var g_diff = g2 - g1;
+	var b_diff = b2 - b1;
+
+
+	var r_step = Math.round(r_diff/16);
+	var g_step = Math.round(g_diff/16);
+	var b_step = Math.round(b_diff/16);
+
+	var r_new;
+	var g_new;
+	var b_new;
+
+
+	for (var i = 0; i < 16; i++)
+	{
+		r_new = Number(r1) + Number(r_step * i);
+		g_new = Number(g1) + Number(g_step * i);
+		b_new = Number(b1) + Number(b_step * i);
+
+		toPush = "rgb(" + r_new + ", " + g_new + ", " + b_new + ")";
+		cyo.push(toPush);
+
+	}
+	console.log(cyo);
+	rset();
+	displayPalette(cyo);
+};
+
+$('#create').click(function() {
+	var r1 = $("#r1").val();
+	var b1 = $("#b1").val();
+	var g1 = $("#g1").val();
+	var r2 = $("#r2").val();
+	var b2 = $("#b2").val();
+	var g2 = $("#g2").val();
+
+	console.log(r1, g1, b1, r2, g2, b2);
+	
+	cyo = [];
+	createYourOwn(r1, g1, b1, r2, g2, b2);
+
+	$('.CYO').addClass('hidden');
+	$('#canvas').removeClass('hidden');
+	
+
 });
 
 function setSize(){
@@ -166,7 +226,6 @@ $('#random').click(function randGrid()
 	curColor = random;
 });
 
-function createYourOwn(){};
 
 $('#scramble').click(function scramble()
 {
@@ -199,8 +258,9 @@ $('#shift').click(function shift()
 	displayPalette(curColor);
 });
 
+
 $(document).keypress(function(event) {
-	console.log(event.which);
+
 	if (event.which == 13){
 		setSize();	
 	}

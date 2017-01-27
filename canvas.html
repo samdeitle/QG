@@ -4,7 +4,7 @@
 
 
 	<head>
-		<title>Palette Display</title>
+		<title>Canvas Demo</title>
 		<link href="https://fonts.googleapis.com/css?family=Dosis:400,800|Press+Start+2P" rel="stylesheet">
 		<link rel="shortcut icon" type="image/x-icon" href="css/img/rnbw-icon.ico">
 		<link rel="stylesheet" type="text/css" href="css/canvas.css"></link>
@@ -32,14 +32,30 @@
 			</div>
 		</div>
 
-		<div class="canvas-wrapper">
-		<canvas id="canvas" width="500" height="500"></canvas>
+		<div class="mainframe">
+			<canvas id="canvas" width="500" height="500"></canvas>
+			<div class="CYO hidden" width="500" height="500">
+				<div>
+				<span><p>R1: </p><input id="r1" type="int"></span>
+				<span><p>G1: </p><input id="g1" type="int"></span>
+				<span><p>B1: </p><input id="b1" type="int"></span>
+				</div>
+				<div>
+				<span><p>R2: </p><input id="r2" type="int"></span>
+				<span><p>G2: </p><input id="g2" type="int"></span>
+				<span><p>B2: </p><input id="b2" type="int"></span>
+				</div>
+				<br></br>
+				<button id="create">Create Gradient</button>
+			</div>
 		</div>
 		
 		<div class="controls">
 			<button id="scramble">Scramble!</button>
 			<button id="shift">Shift!</button>
-			<input id="opacity" type="range" min="0" max="20" value="20">
+			<p>Opacity:</p>
+			<input id="opacity" type="range" min="0" max="20" value="16" oninput="changeOP()">
+			<p id="op-display">0.8</p>
 		</div>
 
 		<div class="resize">
@@ -54,6 +70,15 @@
 		</div>
 
 		<script>
+
+			function changeOP()
+			{
+				var op = ($('#opacity').val())/20;
+				document.getElementById("op-display").innerHTML = op;
+				document.getElementById("canvas").style.opacity = op;
+
+			}
+			
 			function selectTab(bid){
 				$(".tabs button").removeClass("active");
 				$("button#" + bid).addClass("active");
