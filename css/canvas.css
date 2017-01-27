@@ -99,6 +99,10 @@ button.active
 	background: #EEE;
 }
 
+.CYO button
+{
+	display: inline;
+}
 .resize {
 	display: flex;
 	justify-content: center;
