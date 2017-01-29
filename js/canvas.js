@@ -134,6 +134,19 @@ $('#dd').click(function(){
 
 function createYourOwn(r1, g1, b1, r2, g2, b2){
 
+	if (r1 > 255){r1 = 255};
+	if (r1 < 0)  {r1 = 0};
+	if (g1 > 255){g1 = 255};
+	if (g1 < 0)  {g1 = 0};
+	if (b1 > 255){b1 = 255};
+	if (b1 < 0)  {b1 = 0};
+	if (r2 > 255){r2 = 255};
+	if (r2 < 0)  {r2 = 0};
+	if (g2 > 255){g2 = 255};
+	if (g2 < 0)  {g2 = 0};
+	if (b2 > 255){b2 = 255};
+	if (b2 < 0)  {b2 = 0};
+
 	var r_diff = r2 - r1;
 	var g_diff = g2 - g1;
 	var b_diff = b2 - b1;
@@ -267,6 +280,7 @@ $(document).keypress(function(event) {
 
 });
 
+displayPalette(rainbow);
 };
 
 $('document').ready(main);
