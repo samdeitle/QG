@@ -33,11 +33,6 @@ html
 	padding: 25px;
 }
 
-.hidden
-{
-	display: none;
-}
-
 button
 {
 	color: white;
@@ -97,6 +92,7 @@ button.active
 	margin-top: 20px;
 	margin-bottom: 20px;
 	background: #EEE;
+	display: inline-block;
 }
 
 .CYO span, .CYO input
@@ -104,10 +100,16 @@ button.active
 	background: #EEE;
 }
 
-.CYO button
+/*.CYO button
 {
 	display: inline;
+}*/
+
+br
+{
+	display: none;
 }
+
 .resize {
 	display: flex;
 	justify-content: center;
@@ -136,6 +138,7 @@ p
 	display: inline;
 }
 
+
 .footwrapper{
 	margin-top: 10px;
 }
@@ -146,4 +149,9 @@ p
 	padding: 5px;
 	font-size: 10px;
 
+}
+
+.hidden
+{
+	display: none;
 }
