@@ -87,14 +87,22 @@ section {
 
 
 #canvas-link {
+
+	color: #FFF;
 	background-image: url(img/rnbw.jpg);
 	background-size: cover;
-	transition-property: background-image;
+	transition-property: background-image, text-shadow;
+	text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 #canvas-link:hover
 {
 	background-image: url(img/cyn-mgnt.jpg);
+	text-shadow: 2px 2px #222222;
 }
 
 #x {
