@@ -8,10 +8,22 @@ var gridDSplay= true;
 canvas.width  = 500;
 canvas.height = 500;
 
-var rainbow   = ['#ED1C24', '#F26522', '#F7941D', '#FFF200',
-			     '#8DC73F', '#39B54A', '#00A651', '#00A99D', 
-			     '#00AEEF', '#0072BC', '#0054A6', '#2E3192',
-			     '#662D91', '#92278F', '#EC008C', '#ED145B']
+// var rainbow   = ['#ED145B', '#ED1C24', '#F26522', '#F7941D',
+// 				 '#FFF200',	'#8DC73F', '#39B54A', '#00A651',
+// 				 '#00A99D', '#00AEEF', '#0072BC', '#0054A6',
+// 				 '#2E3192', '#662D91', '#92278F', '#EC008C']
+
+
+
+
+//Dope Colors:
+// #BB3377
+
+
+var rainbow   = ['#FF0077', '#FF0000', '#FF3300', '#FF7700',
+ 			     '#FFAA00', '#EEDD00', '#BBEE00', '#66DD00',
+ 			     '#00FF00', '#00DD66', '#00FFAA', '#00FFFF',   
+ 			     '#0033BB', '#0000FF', '#3300FF', '#7700FF']
 
 var bluegreen = ['#33FF66',	'#009933', '#00CC66', '#33FF99',
 				 '#66FF99',	'#33CC66', '#009966', '#66FFFF',
@@ -22,6 +34,7 @@ var pink	  = ['#FF3E96', '#EE3A8C', '#CD3278', '#8B2252',
 				 '#FF69B4', '#FF6EB4', '#EE6AA7', '#CD6090',
 				 '#8B3A62', '#872657', '#FF1493', '#EE1289',
 				 '#CD1076', '#8B0A50', '#FF34B3', '#EE30A7']
+
 var random    = []
 var cyo 	  = []
 var curColor  = null;

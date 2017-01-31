@@ -87,8 +87,14 @@ section {
 
 
 #canvas-link {
-	background-image: url(img/rnbw-icon.png);
+	background-image: url(img/rnbw.jpg);
 	background-size: cover;
+	transition-property: background-image;
+}
+
+#canvas-link:hover
+{
+	background-image: url(img/cyn-mgnt.jpg);
 }
 
 #x {
