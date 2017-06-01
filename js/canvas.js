@@ -61,6 +61,11 @@ function interp(L, Lval, R, Rval, X)
 	return newVal;
 }
 
+function RGBtoString(RGB)
+{
+	var str = "rgb(" + RGB[0] + ", " + RGB[1] + ", " + RGB[2] + ")";
+	return str;
+}
 
 function rset()
 {
@@ -104,20 +109,31 @@ function displayPalette(palette)
 	curColor = palette;
 }
 
-$('#rainbow').click(function handleRainbow(){
+
+
+function handleRainbow(){
 	rset();
 	displayPalette(rainbow);
+}
+$('#rainbow').click(function(){
+	handleRainbow();
 });
 
-$('#bluegreen').click(function handleBlueGreen(){
+
+function handleBlueGreen(){
 	rset();
 	displayPalette(bluegreen);
-});
+}
+$('#bluegreen').click(function(){handleBlueGreen();});
 
-$('#pink').click(function handlePink(){
+
+function handlePink(){
 	rset();
 	displayPalette(pink);
-});
+}
+$('#pink').click(function(){handlePink();});
+
+
 
 $('#gradient').click(function createGrade()
 {
@@ -186,6 +202,7 @@ function createYourOwn(r1, g1, b1, r2, g2, b2){
 	}
 	console.log(cyo);
 	rset();
+	console.log("rset'd");
 	displayPalette(cyo);
 };
 
@@ -227,9 +244,9 @@ function setSize(){
 		displayPalette(curColor);
 	}
 };
-$('#submit').click( function(){setSize();} );
+$('#submit').click( function(){ setSize(); });
 
-$('#random').click(function randGrid()
+$('#random').click( function randGrid()
 {
 	index = r_index.slice();
 	random = []
@@ -277,18 +294,30 @@ $('#scramble').click(function scramble()
 	displayPalette(curColor);
 });
 
-$('#shift').click(function shift()
+function Shift()
 {
 	var tmp = index.shift();
 	index.push(tmp);
 	displayPalette(curColor);
+};
+
+$('#shift').click(function()
+{
+	Shift();
 });
 
 
 $(document).keypress(function(event) {
 
+	console.log(event.which);
 	if (event.which == 13){
 		setSize();	
+	}
+	else if (event.which == 122){
+		Shift();
+	}
+	else if (event.which == 100){
+		handleRainbow();
 	}
 
 });
