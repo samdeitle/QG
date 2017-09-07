@@ -8,6 +8,9 @@ var gridDSplay= true;
 canvas.width  = 500;
 canvas.height = 500;
 
+var globalInterval;		//global for maintaining Interval function
+var shiftInterval = 250;
+
 // var rainbow   = ['#ED145B', '#ED1C24', '#F26522', '#F7941D',
 // 				 '#FFF200',	'#8DC73F', '#39B54A', '#00A651',
 // 				 '#00A99D', '#00AEEF', '#0072BC', '#0054A6',
@@ -24,6 +27,13 @@ var rainbow   = ['#FF0077', '#FF0000', '#FF3300', '#FF7700',
  			     '#FFAA00', '#EEDD00', '#BBEE00', '#66DD00',
  			     '#00FF00', '#00DD66', '#00FFAA', '#00FFFF',   
  			     '#0033BB', '#0000FF', '#3300FF', '#7700FF']
+// 
+// RGB Array of rainbow:
+// 
+// var rainbow   = [[255,0,119], [255,0,0],   [255,51,0],  [255,119,0],
+// 				 [255,170,0], [238,221,0], [197,238,0], [102,221,0],
+// 				 [0,255,0],   [0,221,102], [0,255,170], [0,255,255],
+// 				 [0,51,187],  [0,0,255],   [51,0,255],  [119,0,255]] 			     
 
 var bluegreen = ['#33FF66',	'#009933', '#00CC66', '#33FF99',
 				 '#66FF99',	'#33CC66', '#009966', '#66FFFF',
@@ -72,9 +82,10 @@ function rset()
 	ctx.fillStyle = "#ffffff";
 	ctx.fillRect(0, 0, 500, 500);
 	index = r_index.slice();
-	if (!$('.CYO').hasClass('hidden'))
+	if (!$('.CYO').hasClass('active'))
 	{
-			$('.CYO').addClass('hidden');
+		console.log($('.CYO').hasClass('active'));
+		$('.CYO').addClass('hidden');
 	}	
 
 	$('#canvas').removeClass('hidden');	
@@ -139,7 +150,7 @@ $('#gradient').click(function createGrade()
 {
 
 	$('.CYO').removeClass('hidden');
-	$('#canvas').addClass('hidden');
+	// $('#canvas').addClass('hidden');
 	
 });
 
@@ -219,10 +230,14 @@ $('#create').click(function() {
 	cyo = [];
 	createYourOwn(r1, g1, b1, r2, g2, b2);
 
-	$('.CYO').addClass('hidden');
-	$('#canvas').removeClass('hidden');
+	// $('.CYO').addClass('hidden');
+	// $('#canvas').removeClass('hidden');
 	
 
+});
+
+$('#addBreakpoint').click(function() {
+	document.getElementById("breakpoints").innerHTML += "<div class='breakpoint'><span><p>R2: </p><input id='r2' type='int'></span><span><p>G2: </p><input id='g2' type='int'></span><span><p>B2: </p><input id='b2' type='int'></span></div>";
 });
 
 function setSize(){
@@ -306,20 +321,64 @@ $('#shift').click(function()
 	Shift();
 });
 
+function fullRotation()
+{
+	// for (var i = 0; i < curColor.length; i++) {
+		// function(){console.log(i);}
+		
+		globalInterval = setInterval(function(){Shift();}, shiftInterval);
+
+	// };
+};
+
+
+// ###########
+// # Keypress Handler:
+// #
+// # enter - setSize
+// # z     - Shift
+// # d     - handleRainbow
+// # /	   - fullRotation
+// # ?     - Stops fullRotation
+// # -     - decrease intervalSpeed
+// # =     - increase intervalSpeed
+// # 
+// # 
+// # 
+// ##########
+
 
 $(document).keypress(function(event) {
 
 	console.log(event.which);
+
 	if (event.which == 13){
 		setSize();	
 	}
-	else if (event.which == 122){
+	else if (event.which == 122){ 		
 		Shift();
 	}
 	else if (event.which == 100){
 		handleRainbow();
 	}
-
+	else if (event.which == 47){
+		globalInterval = setInterval(function(){Shift();}, shiftInterval);
+	}
+	else if (event.which == 63){
+		clearInterval(globalInterval);
+	}
+	else if (event.which == 61){
+		shiftInterval += 10;
+		console.log(shiftInterval);
+		clearInterval(globalInterval);
+		globalInterval = setInterval(function(){Shift();}, shiftInterval);
+	}
+	else if (event.which == 45){
+		shiftInterval -= 10;
+		console.log(shiftInterval);
+		clearInterval(globalInterval);
+	    globalInterval = setInterval(function(){Shift();}, shiftInterval);
+	}
 });
 
 displayPalette(rainbow);
