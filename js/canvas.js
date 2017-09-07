@@ -9,7 +9,7 @@ canvas.width  = 500;
 canvas.height = 500;
 
 var globalInterval;		//global for maintaining Interval function
-var shiftInterval = 250;
+var shiftInterval = 120;
 
 // var rainbow   = ['#ED145B', '#ED1C24', '#F26522', '#F7941D',
 // 				 '#FFF200',	'#8DC73F', '#39B54A', '#00A651',
@@ -154,23 +154,42 @@ $('#gradient').click(function createGrade()
 	
 });
 
-$('#gd').click(function(){
+function gridDisplay()
+{
 	if (!gridDSplay){
 		gridDSplay = true;
 		displayPalette(curColor);
 		$('#gd').addClass('active');
 		$('#dd').removeClass('active');
 	}
+};
+
+$('#gd').click(function(){
+	gridDisplay();
 });
 
-$('#dd').click(function(){
+function diagDisplay()
+{
 	if (gridDSplay){
 		gridDSplay = false;
 		displayPalette(curColor);
 		$('#gd').removeClass('active');
 		$('#dd').addClass('active');
 	}
+};
+
+$('#dd').click(function(){
+	diagDisplay();
 });
+
+function toggleDisplay(){
+	if (gridDSplay){
+		diagDisplay();
+	}
+	else {
+		gridDisplay();
+	}
+}
 
 function createYourOwn(r1, g1, b1, r2, g2, b2){
 
@@ -241,10 +260,11 @@ $('#addBreakpoint').click(function() {
 });
 
 function setSize(){
-	var g = $("#gSize").val();
-	
-	if (g != (null||gridSize)) {
-		gridSize = g;
+	var g = $("#gSize");
+
+
+	if ((g.val() != "") && (g.val() != gridSize)) {
+		gridSize = g.val();
 	
 		canvas.height = gridSize*125;
 		canvas.width  = gridSize*125;
@@ -257,7 +277,7 @@ function setSize(){
 	// r_index = tmp;
 		gridScalar = 15/(gridSize*gridSize - 1);
 		displayPalette(curColor);
-	}
+	};
 };
 $('#submit').click( function(){ setSize(); });
 
@@ -316,20 +336,27 @@ function Shift()
 	displayPalette(curColor);
 };
 
+function Unshift()
+{
+	var tmp = index.pop();
+	index.unshift(tmp);
+	displayPalette(curColor);
+}
+
 $('#shift').click(function()
 {
 	Shift();
 });
 
-function fullRotation()
-{
-	// for (var i = 0; i < curColor.length; i++) {
-		// function(){console.log(i);}
+// function fullRotation()
+// {
+// 	// for (var i = 0; i < curColor.length; i++) {
+// 		// function(){console.log(i);}
 		
-		globalInterval = setInterval(function(){Shift();}, shiftInterval);
+// 		globalInterval = setInterval(function(){Shift();}, shiftInterval);
 
-	// };
-};
+// 	// };
+// };
 
 
 // ###########
@@ -337,9 +364,11 @@ function fullRotation()
 // #
 // # enter - setSize
 // # z     - Shift
+// # space - Unshift
 // # d     - handleRainbow
-// # /	   - fullRotation
-// # ?     - Stops fullRotation
+// # q	   - toggleDisplay
+// # /	   - AnimateShift
+// # ?     - Stops AnimateShift
 // # -     - decrease intervalSpeed
 // # =     - increase intervalSpeed
 // # 
@@ -357,6 +386,12 @@ $(document).keypress(function(event) {
 	}
 	else if (event.which == 122){ 		
 		Shift();
+	}
+	else if (event.which == 32){
+		Unshift();
+	}
+	else if (event.which == 113){
+		toggleDisplay();
 	}
 	else if (event.which == 100){
 		handleRainbow();

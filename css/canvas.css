@@ -8,12 +8,6 @@
 	background-image: url(img/PTown1.jpg);
 }
 
-html
-{
-	background-image: url(img/PTown1.jpg);
-}
-
-
 .header
 {
 	padding-top: 20px;
@@ -48,6 +42,7 @@ html
 .infopane p
 {
 	display: block;
+	text-align: none;
 }
 button
 {
