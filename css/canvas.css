@@ -33,6 +33,22 @@ html
 	padding: 25px;
 }
 
+.infopane
+{
+	position: absolute;
+    left: 0px;
+    top: 150px;
+    border: 10px solid transparent;
+	border-image: url(img/border2.png) 20 stretch;
+	color: black;
+	background: #EEE;
+	padding: 25px;
+}
+
+.infopane p
+{
+	display: block;
+}
 button
 {
 	color: white;
