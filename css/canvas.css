@@ -27,7 +27,7 @@
 	padding: 25px;
 }
 
-.infopane
+#infopane
 {
 	position: absolute;
     left: 0px;
@@ -39,7 +39,7 @@
 	padding: 25px;
 }
 
-.infopane p
+#infopane p
 {
 	display: block;
 	text-align: none;

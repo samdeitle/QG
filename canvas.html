@@ -18,8 +18,8 @@
 			<h1>Welcome to Pallet Town! </h1>
 		</div>
 
-		<div class="infopane">
-			<p style="text-decoration: bold underline;"> Keypress Handler:
+		<div id="infopane" class="show" draggable="true" onclick="displayInfo()">
+			<p> Keypress Handler:
 			<br></br>
 			<p> enter - setSize
 			<br></br>
@@ -111,6 +111,19 @@
 
 			}
 			
+			function displayInfo()
+			{
+				$("#infopane").toggleClass("show");
+				if ($("#infopane").hasClass("show"))
+				{
+					document.getElementById("infopane").style.left = "0px";
+				}
+				else
+				{
+					document.getElementById("infopane").style.left = "-300px";
+				}
+			}
+
 			function selectTab(bid){
 				$(".tabs button").removeClass("active");
 				$("button#" + bid).addClass("active");
