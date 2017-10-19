@@ -26,7 +26,7 @@ var shiftInterval = 120;
 var rainbow   = ['#FF0077', '#FF0000', '#FF3300', '#FF7700',
  			     '#FFAA00', '#EEDD00', '#BBEE00', '#66DD00',
  			     '#00FF00', '#00DD66', '#00FFAA', '#00FFFF',   
- 			     '#0033BB', '#0000FF', '#3300FF', '#7700FF']
+ 			     '#0033FF', '#0000FF', '#3300FF', '#7700FF']
 // 
 // RGB Array of rainbow:
 // 
@@ -387,7 +387,7 @@ $(document).keypress(function(event) {
 	else if (event.which == 122){ 		
 		Shift();
 	}
-	else if (event.which == 32){
+	else if (event.which == 120){
 		Unshift();
 	}
 	else if (event.which == 113){
@@ -397,10 +397,15 @@ $(document).keypress(function(event) {
 		handleRainbow();
 	}
 	else if (event.which == 47){
-		globalInterval = setInterval(function(){Shift();}, shiftInterval);
+		if (globalInterval == null){
+			globalInterval = setInterval(function(){Shift();}, shiftInterval);
+		}
 	}
 	else if (event.which == 63){
-		clearInterval(globalInterval);
+		if (globalInterval != null){
+			clearInterval(globalInterval);
+			globalInterval = null;
+		}
 	}
 	else if (event.which == 61){
 		shiftInterval += 10;

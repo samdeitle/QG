@@ -39,11 +39,13 @@
 	padding: 25px;
 }
 
-#infopane p
+#infopane *
 {
+	background: #EEE;
 	display: block;
 	text-align: none;
 }
+
 button
 {
 	color: white;
