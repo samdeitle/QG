@@ -8,7 +8,7 @@ html {
 	margin-left: 5%;
 
 	background-image: url(img/background.jpg);
-	background-size: cover;
+	background-size: fill;
 	text-shadow: 2px 2px #222222;
 }
 
@@ -90,7 +90,7 @@ section {
 #canvas-link {
 
 	color: #FFF;
-	background-image: url(img/rnbw2.JPG);
+	background-image: url(img/rnbw2.jpg);
 	background-size: cover;
 	transition-property: background-image, text-shadow;
 	text-shadow:
@@ -102,7 +102,7 @@ section {
 
 #canvas-link:hover
 {
-	background-image: url(img/cyn-mgnt.JPG);
+	background-image: url(img/cyn-mgnt.jpg);
 	text-shadow: 2px 2px #222222;
 }
 
