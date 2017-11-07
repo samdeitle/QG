@@ -42,12 +42,13 @@ header p {
 
 #subtitle {
 	margin-top: -35px;
-	font-style: oblique;
+/*	font-style: oblique;*/
 
 }
 
 .heading {
-	color: black;
+	color: #14fe7c;
+	background: black;
 	text-align: left;
 	margin: 0px 20%;
 	padding: 15px 0px;

@@ -2,7 +2,8 @@ var main = function(){
 
 var canvas    = document.getElementById("canvas");
 var ctx       = canvas.getContext("2d");
-var gridSize  = 4;
+var gridDime  = 4;
+var gridScale = 125;
 var gridScalar= 1;
 var gridDSplay= true;
 canvas.width  = 500;
@@ -84,7 +85,7 @@ function rset()
 	index = r_index.slice();
 	if (!$('.CYO').hasClass('active'))
 	{
-		console.log($('.CYO').hasClass('active'));
+		// console.log($('.CYO').hasClass('active'));
 		$('.CYO').addClass('hidden');
 	}	
 
@@ -98,20 +99,20 @@ function displayPalette(palette)
 	var i;
 	var j;
 	var ind;
-	for (i = 0; i < gridSize; i++)
+	for (i = 0; i < gridDime; i++)
 	{
-		for (j = 0; j < gridSize; j++)
+		for (j = 0; j < gridDime; j++)
 		{
 			if (gridDSplay)
 			{
-				ind = Math.round((gridSize*i + j)*gridScalar);
+				ind = Math.round((gridDime*i + j)*gridScalar);
 			}
 			else
 			{
 				ind = (i + j);
 			}
 			ctx.fillStyle = palette[index[ind]];
-			ctx.fillRect(i*125, j*125, 125, 125);
+			ctx.fillRect(i*gridScale, j*gridScale, gridScale, gridScale);
 			// console.log("i: " + i + " --- j: " + j + " --- ind: " + ind);
 			// console.log("");
 		}
@@ -263,11 +264,11 @@ function setSize(){
 	var g = $("#gSize");
 
 
-	if ((g.val() != "") && (g.val() != gridSize)) {
-		gridSize = g.val();
+	if ((g.val() != "") && (g.val() != gridDime)) {
+		gridDime = g.val();
 	
-		canvas.height = gridSize*125;
-		canvas.width  = gridSize*125;
+		canvas.height = gridDime*gridScale;
+		canvas.width  = gridDime*gridScale;
 	// var tmp = [];
 	// for (i = 0; i < gridSize*gridSize; i++)
 	// {
@@ -275,7 +276,7 @@ function setSize(){
 	// }
 	// index   = tmp;
 	// r_index = tmp;
-		gridScalar = 15/(gridSize*gridSize - 1);
+		gridScalar = 15/(gridDime*gridDime - 1);
 		displayPalette(curColor);
 	};
 };
@@ -287,16 +288,16 @@ $('#random').click( function randGrid()
 	random = []
 	var i;
 	var j;
-	for (i = 0; i < gridSize; i++)
+	for (i = 0; i < gridDime; i++)
 	{
-		for (j = 0; j < gridSize; j++)
+		for (j = 0; j < gridDime; j++)
 		{
 			var x = (Math.floor(Math.random()*256));
 			var y = (Math.floor(Math.random()*256));
 			var z = (Math.floor(Math.random()*256));
 			var color = "rgb(" + x +", "+ y +", "+ z +")";
 			ctx.fillStyle = color;
-			ctx.fillRect(i*125, j*125, 125, 125);
+			ctx.fillRect(i*gridScale, j*gridScale, gridScale, gridScale);
 			random.push(color);
 
 		}
