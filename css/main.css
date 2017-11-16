@@ -7,8 +7,8 @@ html {
 	margin-right: 5%;
 	margin-left: 5%;
 
-	background-image: url(img/background.jpg);
-	background-size: fill;
+	background: url(img/background.jpg) no-repeat center center fixed;
+	background-size: cover;
 	text-shadow: 2px 2px #222222;
 }
 
