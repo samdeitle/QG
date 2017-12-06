@@ -23,9 +23,12 @@ span {
 
 #title {
 	font-size: 72px;
+	font-variant: small-caps;
 }
 #subtitle {
+	font-family: Times, Times New Roman, serif;
 	font-size: 48px;
+	font-style: italic;
 }
 
 .header * {
