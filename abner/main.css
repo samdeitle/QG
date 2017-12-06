@@ -1,0 +1,33 @@
+html {
+	background: url(./abner.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+body {
+
+	margin: auto;
+
+	background: url(./abner.jpg) no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+span {
+	color: white;
+	text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+#title {
+	font-size: 72px;
+}
+#subtitle {
+	font-size: 48px;
+}
+
+.header * {
+	margin: auto;
+}

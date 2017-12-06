@@ -87,7 +87,7 @@ section {
 }
 
 
-#canvas-link {
+#canvas-link, .projects a {
 
 	color: #FFF;
 	background-image: url(img/rnbw2.jpg);

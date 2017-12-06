@@ -22,6 +22,7 @@ var shiftInterval = 120;
 
 //Dope Colors:
 // #BB3377
+// #3eab95
 
 
 var rainbow   = ['#FF0077', '#FF0000', '#FF3300', '#FF7700',
