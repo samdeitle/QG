@@ -1,25 +1,26 @@
 var main = function(){
 
+
+//Global variables
+
+
 var canvas    = document.getElementById("canvas");
 var ctx       = canvas.getContext("2d");
-var gridDime  = 4;
-var gridScale = 125;
-var gridScalar= 1;
-var gridDSplay= true;
-canvas.width  = 500;
+var gridDime  = 4;									//Dimensions of the grid (in # of colors): 4x4
+var gridScale = 125;								//Variable for scaling individual colors
+var gridScalar= 1;									//
+var gridDSplay= true;								//Boolean for diagonal vs. grid display: If true, display as grid
+canvas.width  = 500;								//Initializes dimensions for the canvas at 500x500
 canvas.height = 500;
 
-var globalInterval;		//global for maintaining Interval function
+var globalInterval;									//global for maintaining Interval function
 var shiftInterval = 120;
+
 
 // var rainbow   = ['#ED145B', '#ED1C24', '#F26522', '#F7941D',
 // 				 '#FFF200',	'#8DC73F', '#39B54A', '#00A651',
 // 				 '#00A99D', '#00AEEF', '#0072BC', '#0054A6',
 // 				 '#2E3192', '#662D91', '#92278F', '#EC008C']
-
-
-
-
 //Dope Colors:
 // #BB3377
 // #3eab95
